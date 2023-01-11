@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-    <title>Document</title>
+    <title>{% block title %} Club Atletico Temperley {% endblock %}</title>
 </head>
 <body>
     <header>
@@ -18,28 +18,32 @@
     <nav class="navbar navbar-light bg-light">
        
         <a class="navbar-brand" href="#">
-         <img  src="club-atletico-temperley-logotipo-oficial.png" alt="Club Atletico Temperley" width="282" height="106" >
+         <img  src="https://upload.wikimedia.org/wikipedia/commons/a/a7/Club_temperley_logo.png" alt="Club Atletico Temperley" width="50" height="50" >
         </a>
     </nav>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item active">
-              <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="/inicio/">Inicio <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Jugadores</a>
+              <a class="nav-link" href="/players/list-players/">Jugadores</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Camisetas</a>
+              <a class="nav-link" href="/shirts/list-shirts/">Camisetas</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Directores Tecnicos</a>
+              <a class="nav-link" href="/coachs/list-coachs/">Directores Tecnicos</a>
             </li>
           </ul>
         </div>
       </nav>
 
     </header>
+
+    {% block content %}
+
+    {% endblock %}
   
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
