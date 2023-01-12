@@ -6,7 +6,7 @@
 
 {% block content %}
 
-    <a href="/coachs/create_coach/" class="btn btn-primary">Crear Director Tecnico</a>
+    <a href="/coachs/create-coach/" class="btn btn-primary">Crear Director Tecnico</a>
 
     {% for coach in coachs %}
       
@@ -15,7 +15,7 @@
             <div class="card-body">
             <h5 class="card-title">{{coach.first_name}} {{coach.last_name}}</h5>
             <h6 class="card-title">Edad: {{coach.age}}</h6>
-            <h6 class="card-title">Temporada: {{coach.season}}</h6>
+            <h6 class="card-title">Temporada: {{coach.period}}</h6>
             <a href="#" class="btn btn-primary">Editar</a>
             <a href="#" class="btn btn-danger">Eliminar</a>
             </div>

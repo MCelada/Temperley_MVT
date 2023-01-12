@@ -8,3 +8,4 @@ Funcionalidades:
     - Agregar Camiseta: Completar campos tales como fabricante y temporada en la que se uso.
 
     - El boton eliminar aun no fue implementado.
+    - Falta implementar imagenes a cada jugador, cada camiseta y cada entrenador.
