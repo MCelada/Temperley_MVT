@@ -1,4 +1,3 @@
-from django.views.generic import ListView, CreateView, DeleteView, UpdateView
 from django.shortcuts import render
 
 from players.models import Players
@@ -37,9 +36,13 @@ def create_player(request):
 
 
 def list_players(request):
-    players = Players.objects.filter(is_active = True)
+    if 'search' in request.GET:
+        search = request.GET['search']
+        players = Players.objects.filter(first_name__icontains=search)
+    else:
+        players = Players.objects.all()
     context = {
-        'players':players
+        'players':players,
     }
     return render(request, 'players/list_players.html', context=context)
 

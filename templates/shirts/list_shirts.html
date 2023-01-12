@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Camisetas
+{% endblock %}
+
+{% block content %}
+
+    <a href="/shirts/create_shirt/" class="btn btn-primary">Crear Camiseta</a>
+
+    {% for shirt in shirts %}
+      
+        <div class="card" style="width: 18rem;">
+            <img src="https://w1.pngwing.com/pngs/201/78/png-transparent-polo-logo-tshirt-clothing-silhouette-fashion-polo-shirt-black-sleeve.png" class="card-img-top" alt="...">
+            <div class="card-body">
+            <h5 class="card-title">Marca: {{shirt.maker}}</h5>
+            <h6 class="card-title">Temporada: {{shirt.season}}</h6>
+            <a href="#" class="btn btn-primary">Editar</a>
+            <a href="#" class="btn btn-danger">Eliminar</a>
+            </div>
+        </div>
+      
+
+    {% endfor %}
+
+{% endblock %}
