@@ -20,7 +20,7 @@ from TemperleyProject.views import index
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('inicio/', index),
+    path('', index),
 
 
     path('players/', include('players.urls')),

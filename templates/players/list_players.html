@@ -8,21 +8,30 @@
 
     <a href="/players/create_player/" class="btn btn-primary">Crear Jugador</a>
 
+       
+    <div class="row">
+        
     {% for player in players %}
+
+        
+        <div class="col-sm-4">
       
-        <div class="card" style="width: 18rem;">
-            <img src="https://w7.pngwing.com/pngs/166/810/png-transparent-fifa-17-logo-quiz-guess-the-shadow-silhouette-game-android-football-blue-game-animals.png" class="card-img-top" alt="...">
-            <div class="card-body">
-            <h5 class="card-title">{{player.first_name}} {{player.last_name}}</h5>
-            <h6 class="card-title">Edad: {{player.age}}</h6>
-            <h6 class="card-title">Altura: {{player.height}}</h6>
-            <h6 class="card-title">Posicion: {{player.position}}</h6>
-            <a href="#" class="btn btn-primary">Editar</a>
-            <a href="#" class="btn btn-danger">Eliminar</a>
+            <div class="card" style="width: 18rem;">
+                <img src="https://w7.pngwing.com/pngs/166/810/png-transparent-fifa-17-logo-quiz-guess-the-shadow-silhouette-game-android-football-blue-game-animals.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                <h5 class="card-title">{{player.first_name}} {{player.last_name}}</h5>
+                <h6 class="card-title">Edad: {{player.age}}</h6>
+                <h6 class="card-title">Altura: {{player.height}}</h6>
+                <h6 class="card-title">Posicion: {{player.position}}</h6>
+                <a href="#" class="btn btn-primary">Editar</a>
+                <a href="#" class="btn btn-danger">Eliminar</a>
+                </div>
             </div>
         </div>
-      
-
-    {% endfor %}
-
+        
+            
+            {% endfor %}
+ 
+        </div>
+            
 {% endblock %}
