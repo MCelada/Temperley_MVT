@@ -8,7 +8,12 @@
 
     <a href="/shirts/create-shirt/" class="btn btn-primary">Crear Camiseta</a>
 
+    <div class="row">
+
     {% for shirt in shirts %}
+
+    <div class="col-sm-3 mx-5">
+
       
         <div class="card" style="width: 18rem;">
             <img src="https://w1.pngwing.com/pngs/201/78/png-transparent-polo-logo-tshirt-clothing-silhouette-fashion-polo-shirt-black-sleeve.png" class="card-img-top" alt="...">
@@ -19,8 +24,11 @@
             <a href="#" class="btn btn-danger">Eliminar</a>
             </div>
         </div>
-      
+      </div>
 
     {% endfor %}
+
+</div>
+
 
 {% endblock %}

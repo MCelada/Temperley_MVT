@@ -15,7 +15,7 @@ def create_coach(request):
         return render(request, 'coachs/create_coach.html', context=context)
 
     elif request.method == 'POST':
-        form = CoachsForm(request.POST)
+        form = CoachsForm(request.POST, request.FILES)
         if form.is_valid():
             Coachs.objects.create(
                 first_name = form.cleaned_data['first_name'],

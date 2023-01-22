@@ -16,6 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+from django.conf.urls.static import static
+
+from TemperleyProject.settings import MEDIA_ROOT, MEDIA_URL
+
 from TemperleyProject.views import index
 
 urlpatterns = [
@@ -26,4 +30,4 @@ urlpatterns = [
     path('players/', include('players.urls')),
     path('coachs/', include('coachs.urls')),
     path('shirts/', include('shirts.urls')),
-]
+] + static(MEDIA_URL, document_root = MEDIA_ROOT)

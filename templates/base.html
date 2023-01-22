@@ -8,23 +8,23 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <title>{% block title %} Club Atletico Temperley {% endblock %}</title>
 </head>
-<body>
+<body background="https://www.itl.cat/pngfile/big/216-2163242_curve-wallpaper-abstract-curve.jpg">
     <header>
 
         
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" >
              <!-- Just an image -->
-    <nav class="navbar navbar-light bg-light">
+    <nav class="navbar navbar-light bg-light" >
        
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="/">
          <img  src="https://upload.wikimedia.org/wikipedia/commons/a/a7/Club_temperley_logo.png" alt="Club Atletico Temperley" width="50" height="50" >
         </a>
     </nav>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item active">
-              <a class="nav-link" href="/inicio/">Inicio <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="/">Inicio <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/players/list-players/">Jugadores</a>
@@ -36,9 +36,9 @@
               <a class="nav-link" href="/coachs/list-coachs/">Directores Tecnicos</a>
             </li>
           </ul>
-          <form class="form-inline my-2 my-lg-0" action="/players/list-players/" method="GET">
-            <input class="form-control mr-sm-2" type="search" placeholder="Buscar Jugador" aria-label="Search" name="search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+          <form class="form-inline my-2 my-lg-0" action="/players/list-players/" method="GET" >
+            <input class="form-control mx-5 mr-sm-5" type="search" placeholder="Buscar Jugador" aria-label="Search" name="search" >
+            <button class="btn btn-outline-success  my-2 my-sm-0" type="submit" >Buscar</button>
           </form>
         </div>
       </nav>

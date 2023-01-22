@@ -6,6 +6,7 @@ class Coachs(models.Model):
     last_name = models.CharField(max_length=100)
     age = models.IntegerField()
     period = models.IntegerField()
+    image = models.ImageField(upload_to='coachs_images',null=True, blank = True)
     is_active = models.BooleanField(default=True)
 
     

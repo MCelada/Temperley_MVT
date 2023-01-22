@@ -4,4 +4,5 @@ from django.db import models
 class Shirts(models.Model):
     maker = models.CharField(max_length=100)
     season = models.IntegerField()
+    image = models.ImageField(upload_to='shirts_images',null=True, blank = True)
     is_active = models.BooleanField(default=True)
