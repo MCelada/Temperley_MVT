@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
+
 
 from shirts.models import Shirts
 from shirts.forms import ShirtsForm
@@ -32,9 +34,12 @@ def create_shirt(request):
         return render(request, 'shirts/create_shirt.html', context=context)
 
 
+@login_required
 def list_shirts(request):
     shirts = Shirts.objects.filter(is_active = True)
     context = {
         'shirts':shirts
     }
     return render(request, 'shirts/list_shirts.html', context=context)
+
+       

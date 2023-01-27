@@ -22,7 +22,7 @@
         </a>
     </nav>
         <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
+          <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
               <a class="nav-link" href="/">Inicio <span class="sr-only">(current)</span></a>
             </li>
@@ -32,12 +32,24 @@
             <li class="nav-item">
               <a class="nav-link" href="/shirts/list-shirts/">Camisetas</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item" style="margin-right: 250px;">
               <a class="nav-link" href="/coachs/list-coachs/">Directores Tecnicos</a>
             </li>
+            {% if request.user.is_authenticated %}
+            <li class="nav-item">
+              <a class="nav-link" href="/users/logout/">Salir</a>
+            </li>
+            {% else %}
+            <li class="nav-item">
+              <a class="nav-link" href="/users/login/">Ingresar</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/users/signup/">Registrarse</a>
+            </li>
+            {% endif %}
           </ul>
           <form class="form-inline my-2 my-lg-0" action="/players/list-players/" method="GET" >
-            <input class="form-control mx-5 mr-sm-5" type="search" placeholder="Buscar Jugador" aria-label="Search" name="search" >
+            <input class="form-control mr-sm-2" type="search" placeholder="Buscar Jugador" aria-label="Search" name="search" >
             <button class="btn btn-outline-success  my-2 my-sm-0" type="submit" >Buscar</button>
           </form>
         </div>

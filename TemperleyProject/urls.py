@@ -30,4 +30,6 @@ urlpatterns = [
     path('players/', include('players.urls')),
     path('coachs/', include('coachs.urls')),
     path('shirts/', include('shirts.urls')),
+    path('users/', include('users.urls')),
+
 ] + static(MEDIA_URL, document_root = MEDIA_ROOT)
