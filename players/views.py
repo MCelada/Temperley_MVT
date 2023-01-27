@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
 
 from players.models import Players
 from players.forms import PlayersForm
@@ -34,7 +35,7 @@ def create_player(request):
             }
         return render(request, 'players/player_create.html', context=context)
 
-
+@login_required
 def list_players(request):
     if 'search' in request.GET:
         search = request.GET['search']

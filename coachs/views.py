@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
 
 from coachs.models import Coachs
 from coachs.forms import CoachsForm
@@ -33,7 +34,7 @@ def create_coach(request):
             }
         return render(request, 'coachs/create_coach.html', context=context)
 
-
+@login_required
 def list_coachs(request):
     coachs = Coachs.objects.filter(is_active = True)
     context = {

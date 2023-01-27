@@ -6,8 +6,13 @@
 
 {% block content %}
 
+{% if request.user.is_authenticated %}
+        {% if request.user.is_superuser %}
+
     <a href="/players/create_player/" class="btn btn-primary">Crear Jugador</a>
 
+    {% endif %}
+    {% endif %}
        
     <div class="row">
         

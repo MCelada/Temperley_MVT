@@ -6,8 +6,12 @@
 
 {% block content %}
 
+{% if request.user.is_authenticated %}
+        {% if request.user.is_superuser %}
     <a href="/coachs/create-coach/" class="btn btn-primary">Crear Director Tecnico</a>
-
+    {% endif %}
+    {% endif %}
+    
     <div class="row">
 
     {% for coach in coachs %}

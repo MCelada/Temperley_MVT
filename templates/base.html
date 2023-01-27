@@ -32,13 +32,17 @@
             <li class="nav-item">
               <a class="nav-link" href="/shirts/list-shirts/">Camisetas</a>
             </li>
-            <li class="nav-item" style="margin-right: 250px;">
+            <li class="nav-item" style="margin-right: 500px;">
               <a class="nav-link" href="/coachs/list-coachs/">Directores Tecnicos</a>
             </li>
             {% if request.user.is_authenticated %}
             <li class="nav-item">
+              <a class="nav-link" href="/users/update/">{{request.user.username}}</a>
+          </li>
+            <li class="nav-item">
               <a class="nav-link" href="/users/logout/">Salir</a>
             </li>
+            
             {% else %}
             <li class="nav-item">
               <a class="nav-link" href="/users/login/">Ingresar</a>
