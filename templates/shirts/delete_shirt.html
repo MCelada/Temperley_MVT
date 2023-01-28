@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Borrar Camiseta
+{% endblock %}
+
+{% block content %}
+
+    <h2>Camiseta a borrar {{object.maker}}</h2>
+    <p>Seguro que desea eliminarla?</p>
+
+    <form action="" method="POST">
+        {% csrf_token %}
+        <input type="submit" value="Borrar">
+    </form>
+
+
+{% endblock %}

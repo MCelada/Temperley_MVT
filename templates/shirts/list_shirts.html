@@ -24,8 +24,8 @@
             <div class="card-body">
             <h5 class="card-title">Marca: {{shirt.maker}}</h5>
             <h6 class="card-title">Temporada: {{shirt.season}}</h6>
-            <a href="#" class="btn btn-primary">Editar</a>
-            <a href="#" class="btn btn-danger">Eliminar</a>
+            <a href="/shirts/update_shirt/{{shirt.pk}}/" class="btn btn-primary">Editar</a>
+            <a href="/shirts/delete_shirt/{{shirt.pk}}/" class="btn btn-danger">Eliminar</a>
             </div>
         </div>
       </div>

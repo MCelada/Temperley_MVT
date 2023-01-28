@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Borrar Director Tecnico
+{% endblock %}
+
+{% block content %}
+
+    <h2>Director Tecnico a borrar {{object.first_name}}{{object.last_name}}</h2>
+    <p>Seguro que desea eliminarlo?</p>
+
+    <form action="" method="POST">
+        {% csrf_token %}
+        <input type="submit" value="Borrar">
+    </form>
+
+
+{% endblock %}

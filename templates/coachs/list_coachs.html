@@ -11,17 +11,16 @@
     <a href="/coachs/create-coach/" class="btn btn-primary">Crear Director Tecnico</a>
     {% endif %}
     {% endif %}
-    
-    <div class="row">
+
+    <div style="display: flex; flex-direction: row; flex-wrap: wrap">
 
     {% for coach in coachs %}
-
     <div class="col-sm-3 mx-5">
       
         <div class="card" style="width: 18rem;">
-            {% if request.coach.image.url != '' %}
-            <img src="{{coach.image}}" class="card-img-top" alt="...">
-            {% endif %}
+            
+            <img src="{{ coach.image.url }}" class="card-img-top" width="50%">
+            
             <div class="card-body">
             <h5 class="card-title">{{coach.first_name}} {{coach.last_name}}</h5>
             <h6 class="card-title">Edad: {{coach.age}}</h6>
