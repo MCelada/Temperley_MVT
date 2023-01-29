@@ -25,8 +25,8 @@
             <h5 class="card-title">{{coach.first_name}} {{coach.last_name}}</h5>
             <h6 class="card-title">Edad: {{coach.age}}</h6>
             <h6 class="card-title">Temporada: {{coach.period}}</h6>
-            <a href="#" class="btn btn-primary">Editar</a>
-            <a href="#" class="btn btn-danger">Eliminar</a>
+            <a href="/coachs/update_coach/{{coach.pk}}/" class="btn btn-primary">Editar</a>
+            <a href="/coachs/delete_coach/{{coach.pk}}/" class="btn btn-danger">Eliminar</a>
             </div>
         </div>
         </div>
