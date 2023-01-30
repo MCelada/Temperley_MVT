@@ -14,5 +14,5 @@ class Players(models.Model):
     age = models.IntegerField()
     height = models.FloatField()
     position = models.CharField(max_length=50, choices = CONDITION_CHOICES)
-    image = models.ImageField(upload_to='players_images',null=True, blank = True)
+    image = models.ImageField(verbose_name = 'imagen', upload_to='players_images',null=True, blank = True, default='\players_images\silueta.jpg')
     is_active = models.BooleanField(default=True)

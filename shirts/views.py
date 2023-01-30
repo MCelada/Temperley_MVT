@@ -78,5 +78,5 @@ def update_shirt(request, pk):
 class ShirtDeleteView(DeleteView):
     model = Shirts
     template_name = 'shirts/delete_shirt.html'
-    success_url = 'shirts/list_shirts.html'
+    success_url = '/shirts/list-shirts/'
        

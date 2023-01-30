@@ -4,7 +4,7 @@ from players.views import create_player, list_players, update_player, PlayerDele
 
 urlpatterns = [
     path('create_player/', create_player),
-    path('list-players/', list_players),
+    path('list-players/', list_players, name = 'list_players'),
     path('update_player/<int:pk>/', update_player),
-    path('delete_player/<int:pk>/', PlayerDeleteView.as_view(), name='player_delete'),
+    path('delete_player/<int:pk>/', PlayerDeleteView.as_view(template_name='players/player_delete.html'), name='player_delete'),
 ]

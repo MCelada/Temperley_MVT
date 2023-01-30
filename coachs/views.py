@@ -82,4 +82,4 @@ def update_coach(request, pk):
 class CoachDeleteView(DeleteView):
     model = Coachs
     template_name = 'coachs/delete_coach.html'
-    success_url = 'coachs/list_coachs.html'
+    success_url = '/coachs/list-coachs'

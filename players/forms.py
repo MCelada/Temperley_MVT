@@ -1,4 +1,5 @@
 from django import forms
+from players.models import Players
 
 class PlayersForm(forms.Form):
     first_name = forms.CharField(max_length=100)
@@ -6,3 +7,4 @@ class PlayersForm(forms.Form):
     age = forms.IntegerField()
     height = forms.FloatField()
     position = forms.CharField(max_length=50)
+    

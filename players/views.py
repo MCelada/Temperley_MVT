@@ -24,6 +24,7 @@ def create_player(request):
                 age = form.cleaned_data['age'],
                 height = form.cleaned_data['height'],
                 position = form.cleaned_data['position'],
+                
             )
             context = {
                 'message': 'Jugador creado exitosamente'
@@ -58,7 +59,7 @@ def update_player(request, pk):
                     'age':player.age,
                     'height':player.height,
                     'position':player.position,
-
+                    
                 }
             )
         }
@@ -73,6 +74,7 @@ def update_player(request, pk):
                 player.age = form.cleaned_data['age']
                 player.height = form.cleaned_data['height']
                 player.position = form.cleaned_data['position']
+               
                 player.save()
             
                 context = {
@@ -89,4 +91,4 @@ def update_player(request, pk):
 class PlayerDeleteView(DeleteView):
     model = Players
     template_name = 'players/player_delete.html'
-    success_url = 'players/list_players.html'
+    success_url = '/players/list-players'
