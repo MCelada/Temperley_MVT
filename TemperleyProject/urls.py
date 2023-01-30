@@ -20,11 +20,12 @@ from django.conf.urls.static import static
 
 from TemperleyProject.settings import MEDIA_ROOT, MEDIA_URL
 
-from TemperleyProject.views import index
+from TemperleyProject.views import index, about
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name='index'),
+    path('about/', about, name='about'),
 
 
     path('players/', include('players.urls')),
