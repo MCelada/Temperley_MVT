@@ -3,7 +3,9 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login, authenticate
 from django.shortcuts import render, redirect
 
-from users.forms import RegisterForm, UserUpdateForm
+
+from users.models import UserProfile
+from users.forms import RegisterForm, UserUpdateForm, UserProfileForm
 
 def login_view(request):
     if request.method == 'GET':
@@ -46,10 +48,8 @@ def register(request):
     elif request.method == 'POST':
         form = RegisterForm(request.POST)
         if form.is_valid():
-            form.save()
-            context={
-                'form':AuthenticationForm()
-            }
+            user = form.save()
+            UserProfile.objects.create(user=user)
             return redirect('login')
 
         context= {
@@ -86,3 +86,29 @@ def update_user(request):
             'form':RegisterForm()
         }
         return render(request, 'users/user_update.html', context=context)
+
+def update_user_profile(request):
+    user = request.user
+    if request.method == 'GET':
+        form = UserProfileForm(initial={
+            'phone':request.user.profile.phone,
+            'job_position':request.user.profile.job_position,
+        })
+        context ={
+            'form':form
+        }
+        return render(request, 'users/profile_update.html', context=context)
+
+    elif request.method == 'POST':
+        form = UserProfileForm(request.POST, request.FILES)
+        if form.is_valid():
+            user.profile.phone = form.cleaned_data.get('phone')
+            user.profile.job_position = form.cleaned_data.get('job_position')
+            user.profile.save()
+            return redirect('index')
+        
+        context = {
+            'errors':form.errors,
+            'form':UserProfileForm()
+        }
+        return render(request, 'users/register.html', context=context)
