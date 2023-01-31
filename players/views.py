@@ -6,7 +6,6 @@ from players.forms import PlayersForm
 
 # Create your views here.
 
-
 def create_player(request):
     if request.method == 'GET':
         context = {
@@ -24,7 +23,6 @@ def create_player(request):
                 age = form.cleaned_data['age'],
                 height = form.cleaned_data['height'],
                 position = form.cleaned_data['position'],
-                
             )
             context = {
                 'message': 'Jugador creado exitosamente'

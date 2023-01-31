@@ -28,8 +28,10 @@
                 <h6 class="card-title">Edad: {{player.age}}</h6>
                 <h6 class="card-title">Altura: {{player.height}}</h6>
                 <h6 class="card-title">Posicion: {{player.position}}</h6>
+                {% if request.user.is_superuser %}
                 <a href="/players/update_player/{{player.pk}}/" class="btn btn-primary">Editar</a>
                 <a href="/players/delete_player/{{player.pk}}/" class="btn btn-danger">Eliminar</a>
+                {% endif %}
                 </div>
             </div>
         </div>

@@ -43,6 +43,7 @@ def list_coachs(request):
     }
     return render(request, 'coachs/list_coachs.html', context=context)
 
+
 def update_coach(request, pk):
     coach = Coachs.objects.get(pk=pk)
     if request.method == 'GET':
