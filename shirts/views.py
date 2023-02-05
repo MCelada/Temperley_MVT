@@ -17,11 +17,12 @@ def create_shirt(request):
         return render(request, 'shirts/create_shirt.html', context=context)
 
     elif request.method == 'POST':
-        form = ShirtsForm(request.POST)
+        form = ShirtsForm(request.POST, request.FILES)
         if form.is_valid():
             Shirts.objects.create(
                 maker = form.cleaned_data['maker'],
                 season = form.cleaned_data['season'],
+                image = form.cleaned_data['image'],
             )
             context = {
                 'message': 'Camiseta creada exitosamente'
@@ -36,9 +37,13 @@ def create_shirt(request):
 
 @login_required
 def list_shirts(request):
-    shirts = Shirts.objects.filter(is_active = True)
+    if 'search' in request.GET:
+        search = request.GET['search']
+        shirts = Shirts.objects.filter(maker__icontains=search)
+    else:
+        shirts = Shirts.objects.all()
     context = {
-        'shirts':shirts
+        'shirts':shirts,
     }
     return render(request, 'shirts/list_shirts.html', context=context)
 
@@ -51,6 +56,7 @@ def update_shirt(request, pk):
                 initial={
                     'maker':shirt.maker,
                     'season':shirt.season,
+                    'image':shirt.image,
                 }
             )
         }
@@ -58,10 +64,11 @@ def update_shirt(request, pk):
         return render(request, 'shirts/update_shirt.html', context=context)
 
     elif request.method == 'POST':
-        form = ShirtsForm(request.POST)
+        form = ShirtsForm(request.POST, request.FILES)
         if form.is_valid():
                 shirt.maker = form.cleaned_data['maker']
                 shirt.season = form.cleaned_data['season']
+                shirt.image = form.cleaned_data['image']
                 shirt.save()
             
                 context = {

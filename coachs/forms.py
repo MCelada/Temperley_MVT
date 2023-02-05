@@ -5,3 +5,4 @@ class CoachsForm(forms.Form):
     last_name = forms.CharField(max_length=100)
     age = forms.IntegerField()
     period = forms.IntegerField()
+    image = forms.ImageField()

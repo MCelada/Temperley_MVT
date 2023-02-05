@@ -20,7 +20,11 @@
 
       
         <div class="card" style="width: 18rem;">
+            {% if shirt.image.url != '' %}
             <img src="{{ shirt.image.url }}" class="card-img-top" width="50%">
+            {% else %} 
+                <p>No Image</p>
+            {% endif %}
             <div class="card-body">
             <h5 class="card-title">Marca: {{shirt.maker}}</h5>
             <h6 class="card-title">Temporada: {{shirt.season}}</h6>

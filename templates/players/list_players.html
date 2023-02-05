@@ -22,7 +22,12 @@
         <div class="col-sm-3 mx-5">
       
             <div class="card" style="width: 18rem;">
-                <img src="{{ player.image.url }}" class="card-img-top" width="50%">
+                
+                {% if player.image.url != '' %}
+                <img src="{{player.image.url}}" class="card-img-top" width="50%">
+                {% else %} 
+                    <p>No Image</p>
+                {% endif %}
                 <div class="card-body">
                 <h5 class="card-title">{{player.first_name}} {{player.last_name}}</h5>
                 <h6 class="card-title">Edad: {{player.age}}</h6>
