@@ -87,6 +87,7 @@ def update_user(request):
         }
         return render(request, 'users/user_update.html', context=context)
 
+
 def update_user_profile(request):
     user = request.user
     if request.method == 'GET':

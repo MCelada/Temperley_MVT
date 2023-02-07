@@ -81,7 +81,7 @@ def update_player(request, pk):
                 player.save()
             
                 context = {
-                    'message': 'Jugador creado exitosamente'
+                    'message': 'Jugador Actualizado exitosamente'
                 }
         else:
             context = {
